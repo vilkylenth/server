@@ -778,6 +778,7 @@ MinHonorKills = 15
 MaintenanceDay = 3
 InstantLogout = 1
 AllFlightPaths = 0
+InstantFlightPaths = 0
 AlwaysMaxSkillForLevel = 0
 ActivateWeather = 1
 CastUnstuck = 1
