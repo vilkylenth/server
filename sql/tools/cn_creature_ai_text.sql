@@ -1,4 +1,4 @@
---汉化creature_ai_text表内未汉化的内容
+-- 汉化creature_ai_text表内未汉化的内容
 
 UPDATE `creature_ai_texts` SET `entry`='-1', `content_default`='I see those fools at the Abbey sent some fresh meat for us.', `content_loc1`=NULL, `content_loc2`='Je vois que ces imbéciles de l\'Abbaye ont envoyé de la viande fraîche pour nous.', `content_loc3`='Diese Dummk?pfe aus der Abtei haben uns Frischfleisch geschickt.', `content_loc4`='我看到修道院的那帮笨蛋给我们送来新鲜的肉了。', `content_loc5`=NULL, `content_loc6`=NULL, `content_loc7`=NULL, `content_loc8`='Я смотрю, эти дураки из Аббатства прислали нам свежего мяса.', `sound`='0', `type`='0', `language`='0', `emote`='0', `comment`='103' WHERE (`entry`='-1');
 UPDATE `creature_ai_texts` SET `entry`='-2', `content_default`='The Brotherhood will not tolerate your actions.', `content_loc1`=NULL, `content_loc2`='La Confrérie ne tolérera pas vos actions.', `content_loc3`='Die Bruderschaft wird eure Taten nicht tolerieren.', `content_loc4`='兄弟会不能容忍你的行为。', `content_loc5`=NULL, `content_loc6`=NULL, `content_loc7`=NULL, `content_loc8`='Братство этого так не оставит.', `sound`='0', `type`='0', `language`='0', `emote`='0', `comment`='Common Defais Text' WHERE (`entry`='-2');
