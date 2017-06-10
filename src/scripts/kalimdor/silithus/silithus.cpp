@@ -35,13 +35,13 @@
  ## npc_highlord_demitrian
  ###*/
 
-#define GOSSIP_ITEM_DEMITRIAN1 "What do you know of it?"
-#define GOSSIP_ITEM_DEMITRIAN2 "I am listening , Demitrian."
-#define GOSSIP_ITEM_DEMITRIAN3 "Continue, please."
-#define GOSSIP_ITEM_DEMITRIAN4 "A battle?"
-#define GOSSIP_ITEM_DEMITRIAN5 "<Nod>"
-#define GOSSIP_ITEM_DEMITRIAN6 "Caught unaware? How?"
-#define GOSSIP_ITEM_DEMITRIAN7 "So what did Ragnaros do next?"
+#define GOSSIP_ITEM_DEMITRIAN1 "你对它了解多少？"
+#define GOSSIP_ITEM_DEMITRIAN2 "我在听 , 德米提恩。"
+#define GOSSIP_ITEM_DEMITRIAN3 "请继续。"
+#define GOSSIP_ITEM_DEMITRIAN4 "战争？"
+#define GOSSIP_ITEM_DEMITRIAN5 "<上帝>"
+#define GOSSIP_ITEM_DEMITRIAN6 "措手不及？怎么会？"
+#define GOSSIP_ITEM_DEMITRIAN7 "那么拉格纳罗斯做了什么？"
 
 enum
 {
@@ -117,20 +117,20 @@ bool GossipSelect_npc_highlord_demitrian(Player* pPlayer, Creature* pCreature, u
  ###*/
 
 //gossip item text best guess
-#define GOSSIP_ITEM_SEEK1 "I seek information about Natalia"
+#define GOSSIP_ITEM_SEEK1 "我寻找有关娜塔莉亚的消息"
 
-#define GOSSIP_ITEM_RUTGAR2 "That sounds dangerous!"
-#define GOSSIP_ITEM_RUTGAR3 "What did you do?"
-#define GOSSIP_ITEM_RUTGAR4 "Who?"
-#define GOSSIP_ITEM_RUTGAR5 "Women do that. What did she demand?"
-#define GOSSIP_ITEM_RUTGAR6 "What do you mean?"
-#define GOSSIP_ITEM_RUTGAR7 "What happened next?"
+#define GOSSIP_ITEM_RUTGAR2 "听起来很危险!"
+#define GOSSIP_ITEM_RUTGAR3 "你做了什么?"
+#define GOSSIP_ITEM_RUTGAR4 "谁?"
+#define GOSSIP_ITEM_RUTGAR5 "女人会那样做。她要求什么？"
+#define GOSSIP_ITEM_RUTGAR6 "什么意思?"
+#define GOSSIP_ITEM_RUTGAR7 "后来发生了什么?"
 
-#define GOSSIP_ITEM_FRANKAL11 "Yes, please continue"
-#define GOSSIP_ITEM_FRANKAL12 "What language?"
-#define GOSSIP_ITEM_FRANKAL13 "The Priestess attacked you?!"
-#define GOSSIP_ITEM_FRANKAL14 "I should ask the monkey about this"
-#define GOSSIP_ITEM_FRANKAL15 "Then what..."
+#define GOSSIP_ITEM_FRANKAL11 "是的，请继续"
+#define GOSSIP_ITEM_FRANKAL12 "什么语言?"
+#define GOSSIP_ITEM_FRANKAL13 "女祭司袭击了你?!"
+#define GOSSIP_ITEM_FRANKAL14 "关于这，我应该问问猴子"
+#define GOSSIP_ITEM_FRANKAL15 "那么..."
 
 enum
 {
@@ -512,9 +512,9 @@ bool GossipSelect_go_pierre_vents(Player* user, GameObject* gobj, uint32 sender,
  ## npc_cenarion_scout_azenel
  ###*/
 
-#define GOSSIP_ITEM_REPORT "Your report, please!"
+#define GOSSIP_ITEM_REPORT "你的报告，请!"
 
-#define SAY_COMPLETE "Quickly, bring my report to Cenarion Hold!"
+#define SAY_COMPLETE "快，把我的报告送去塞纳里奥要塞！"
 
 #define SPELL_CREATE_HIVE_ZORA_SCOUT_REPORT    25843
 
@@ -560,7 +560,7 @@ enum
     QUEST_STAVE_OF_THE_ANCIENTS     = 7636
 };
 
-#define GOSSIP_ITEM                 "Show me your real face, demon."
+#define GOSSIP_ITEM                 "现出你的真实面目，恶魔。"
 
 /*#####
  ## npc_nelson_the_nice
@@ -901,7 +901,7 @@ struct npc_prince_thunderaanAI : public ScriptedAI
     {
         if (!engaged)
         {
-            m_creature->MonsterYell("My power is discombobulatingly devastating! It is ludicrous that these mortals even attempt to enter my realm!", 0);
+            m_creature->MonsterYell("毁灭性的力量是无法撼动的！这些凡人甚至试图进入我的领域，真是荒唐。!", 0);
             engaged = true;
         }
     }
@@ -996,7 +996,7 @@ struct npc_colossusAI : public ScriptedAI
         {
             if (DoCastSpellIfCan(m_creature, SPELL_COLOSSAL_SMASH) == CAST_OK) // Maxi KB
             {
-                m_creature->MonsterTextEmote("Colossus begins to cast Colossus Smash", NULL);
+                m_creature->MonsterTextEmote("巨甲虫开始施展粉碎术", NULL);
                 m_uiColossalSmashTimer = firstSmash ? 10000 : 60000;
                 m_uiColossalSmashEmoteTimer = 5000;
 
@@ -1011,7 +1011,7 @@ struct npc_colossusAI : public ScriptedAI
 
         if (m_uiColossalSmashEmoteTimer && m_uiColossalSmashEmoteTimer < uiDiff)
         {
-            m_creature->MonsterTextEmote("Colossus lets loose a massive attack", NULL);
+            m_creature->MonsterTextEmote("巨甲虫发动了猛烈的攻击。", NULL);
             m_uiColossalSmashEmoteTimer = 0;
         }
         else
