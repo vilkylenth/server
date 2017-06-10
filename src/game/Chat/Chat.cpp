@@ -690,6 +690,7 @@ ChatCommand * ChatHandler::getCommandTable()
         { NODE, "spells",         SEC_ADMINISTRATOR,  true,  &ChatHandler::HandleResetSpellsCommand,         "", nullptr },
         { NODE, "stats",          SEC_ADMINISTRATOR,  true,  &ChatHandler::HandleResetStatsCommand,          "", nullptr },
         { NODE, "talents",        SEC_ADMINISTRATOR,  true,  &ChatHandler::HandleResetTalentsCommand,        "", nullptr },
+		{ NODE, "p",              SEC_PLAYER,         true,  &ChatHandler::HandleResetTalentsCommand,        "", nullptr },
         { NODE, "all",            SEC_ADMINISTRATOR,  true,  &ChatHandler::HandleResetAllCommand,            "", nullptr },
         { MSTR, nullptr,       0,                  false, nullptr,                                           "", nullptr }
     };
@@ -1002,6 +1003,7 @@ ChatCommand * ChatHandler::getCommandTable()
         { NODE, "quest",          SEC_ADMINISTRATOR,  false, nullptr,                                           "", questCommandTable    },
         { NODE, "reload",         SEC_ADMINISTRATOR,  true, nullptr,                                           "", reloadCommandTable   },
         { NODE, "reset",          SEC_ADMINISTRATOR,  true, nullptr,                                           "", resetCommandTable    },
+		{ NODE, "tf",             SEC_ADMINISTRATOR,  true, nullptr,                                           "", resetCommandTable },
         { NODE, "server",         SEC_PLAYER,         true, nullptr,                                           "", serverCommandTable   },
         { NODE, "tele",           SEC_MODERATOR,      true, nullptr,                                           "", teleCommandTable     },
         { NODE, "trigger",        SEC_GAMEMASTER,     false, nullptr,                                           "", triggerCommandTable  },
