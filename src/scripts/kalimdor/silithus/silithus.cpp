@@ -512,7 +512,7 @@ bool GossipSelect_go_pierre_vents(Player* user, GameObject* gobj, uint32 sender,
 ## npc_cenarion_scout_azenel
 ###*/
 
-#define GOSSIP_ITEM_REPORT "麻烦了请汇报。."
+#define GOSSIP_ITEM_REPORT "麻烦了，请汇报。."
 
 #define SAY_COMPLETE "快把我的报告送到塞纳里奥要塞。."
 
@@ -560,7 +560,7 @@ enum
 	QUEST_STAVE_OF_THE_ANCIENTS = 7636
 };
 
-#define GOSSIP_ITEM                 "恶魔现出你的真面目吧。."
+#define GOSSIP_ITEM                 "恶魔，现出你的真面目吧。."
 
 /*#####
 ## npc_nelson_the_nice
@@ -1496,7 +1496,7 @@ bool GossipHello_npc_AQwar_collector(Player* pPlayer, Creature* pCreature)
 			pCreature->RemoveFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
 
 		char sMessage[200] = "";
-		sprintf(sMessage, "The collection of %s is no longer necessary.", itemNameReqReached);
+		sprintf(sMessage, "物资：%s已经足够，不需要更多的了.", itemNameReqReached);
 
 		pPlayer->CLOSE_GOSSIP_MENU();
 		pCreature->MonsterSay(sMessage, 0, 0);
@@ -1741,7 +1741,7 @@ bool QuestComplete_npc_AQwar_collector(Player* pPlayer, Creature* pQuestGiver, Q
 			pQuestGiver->RemoveFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
 
 		char sMessage[200] = "";
-		sprintf(sMessage, "Congratulations %s! The collection of %s is finally finished!", pPlayer->GetName(), itemName);
+		sprintf(sMessage, "恭喜%s!资源%s已经全部采集完成!", pPlayer->GetName(), itemName);
 		pQuestGiver->MonsterSay(sMessage, 0, 0);
 		pQuestGiver->HandleEmote(EMOTE_ONESHOT_CHEER);
 	}
@@ -1787,7 +1787,7 @@ bool ChatHandler::HandleGetWarEffortResource(char* args)
 	{
 		uint32 CurrentResourceCount = sObjectMgr.GetSavedVariable(Resource->saveVarID);
 		double Progress = (double)CurrentResourceCount / (double)Resource->reqCount;
-		PSendSysMessage("\"%s\"[%u] Current [%u] Required [%u] Completed: %.03f", Resource->itemName, Resource->itemID, CurrentResourceCount, Resource->reqCount, Progress);
+		PSendSysMessage("\"%s\"[%u]目前[%u]需求[%u]已完成:%.03f", Resource->itemName, Resource->itemID, CurrentResourceCount, Resource->reqCount, Progress);
 	};
 
 	if (const WarEffort* pResource = GetResourceIDFromString(pResourceName))
@@ -1797,7 +1797,7 @@ bool ChatHandler::HandleGetWarEffortResource(char* args)
 	}
 	else
 	{
-		PSendSysMessage("Error: resource with name \"%s\" not found", pResourceName);
+		PSendSysMessage("错误: 资源名称\"%s\"无法找到", pResourceName);
 	}
 
 	return false;
@@ -1808,13 +1808,13 @@ bool ChatHandler::HandleSetWarEffortResource(char* args)
 	char* pResourceName = ExtractQuotedArg(&args);
 	if (pResourceName == nullptr)
 	{
-		PSendSysMessage("Usage example .wareffortset \"Iron Bar\" 1245");
+		PSendSysMessage("使用示例.wareffortset\"Iron Bar\"1245");
 		return false;
 	}
 	uint32 NewResourceCount = 0;
 	if (!ExtractUInt32(&args, NewResourceCount))
 	{
-		PSendSysMessage("Usage example .wareffortset \"Iron Bar\" 1245");
+		PSendSysMessage("使用示例.wareffortset\"Iron Bar\"1245");
 		return false;
 	}
 
@@ -1823,12 +1823,12 @@ bool ChatHandler::HandleSetWarEffortResource(char* args)
 		uint32 PreviousResourceCount = sObjectMgr.GetSavedVariable(pResource->saveVarID);
 		sObjectMgr.SetSavedVariable(pResource->saveVarID, NewResourceCount, true);
 		double Progress = (double)NewResourceCount / (double)pResource->reqCount;
-		PSendSysMessage("\"%s\" Previous count [%u] New count [%u] Completed: %.03f", pResourceName, PreviousResourceCount, NewResourceCount, Progress);
+		PSendSysMessage("\"%s\"以前的计数[%u]新的计数[%u]已完成:%.03f", pResourceName, PreviousResourceCount, NewResourceCount, Progress);
 		return true;
 	}
 	else
 	{
-		PSendSysMessage("Error: resource with name \"%s\" not found", pResourceName);
+		PSendSysMessage("错误: 资源名称\"%s\"没有找到", pResourceName);
 	}
 
 
@@ -3546,8 +3546,8 @@ bool QuestRewarded_scarab_gong(Player* player, GameObject* go, Quest const* ques
 ## npc_Krug_SkullSplit ##
 ########################*/
 
-#define GOSSIP_ITEM_KRUG_SKULLSPLIT_1 "Continue."
-#define GOSSIP_ITEM_KRUG_SKULLSPLIT_2 "Very well, let's go!"
+#define GOSSIP_ITEM_KRUG_SKULLSPLIT_1 "继续."
+#define GOSSIP_ITEM_KRUG_SKULLSPLIT_2 "非常好, 出发!"
 
 /* Hunterkiller */
 #define HUNTERKILLER_SPAWN_POS_X -7765.0f
@@ -4186,8 +4186,8 @@ enum
 bool GossipHello_npc_chris_starlightshadow(Player* pPlayer, Creature* pCreature)
 {
 
-	pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Guide me to the Ruins of Ahn'Qiraj", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
-	pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Guide me to the Temple of Ahn'Qiraj", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
+	pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "请带我去：安其拉废墟", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+	pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "请带我去：安其拉神殿", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
 	pPlayer->SEND_GOSSIP_MENU(pPlayer->GetGossipTextId(pCreature), pCreature->GetGUID());
 
 	return true;
