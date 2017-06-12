@@ -15,4 +15,10 @@ INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`,
 INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `datalong4`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES ('60009', '0', '6', '0', '0', '0', '0', '0', '0', '0', '0', '0', '-14302', '518', '9', '0', '');
 INSERT INTO `gossip_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `datalong3`, `datalong4`, `data_flags`, `dataint`, `dataint2`, `dataint3`, `dataint4`, `x`, `y`, `z`, `o`, `comments`) VALUES ('60013', '0', '6', '1', '0', '0', '0', '0', '0', '0', '0', '0', '-7176', '-3821', '8.9', '0', '');
 -- creature
-INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`) VALUES (2000028, 900028, 1, 0, 0, 16244.69, 16254.83, 18.53, 2.55, 25, 0, 0, 1337, 420, 0, 0);
+-- 奥格瑞玛添加中立传送员--银行门口
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES ('2000038', '900028', '1', '0', '1', '1619.17', '-4392.88', '10.4158', '4.28352', '25', '5', '0', '5500', '0', '0', '0', '0');
+-- 铁炉堡添加中立传送员900028--银行门口
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES ('2000039', '900028', '0', '0', '1', '-4898.63', '-964.758', '501.448', '2.30039', '25', '5', '0', '5500', '0', '0', '0', '0');
+-- GM岛添加传送
+INSERT INTO `creature` (`guid`, `id`, `map`, `modelid`, `equipment_id`, `position_x`, `position_y`, `position_z`, `orientation`, `spawntimesecs`, `spawndist`, `currentwaypoint`, `curhealth`, `curmana`, `DeathState`, `MovementType`, `spawnFlags`) VALUES ('2000040', '900028', '1', '0', '0', '16244.7', '16254.8', '18.53', '2.55', '25', '0', '0', '1337', '420', '0', '0', '0');
+
