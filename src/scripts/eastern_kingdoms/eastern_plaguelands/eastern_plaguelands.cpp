@@ -173,7 +173,7 @@ enum
     SPELL_INVOC_PAYSANTS    = 23119,
     SPELL_PORTE_MORT        = 23127,
     SPELL_FUFU              = 23196,
-    SPELL_SEE               = 23199,        // Pas sur de son utilité
+    SPELL_SEE               = 23199,        // Pas sur de son utilit?
 
     QUEST_BALANCE_OF_LIGHT  = 7622,
 
@@ -1333,7 +1333,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
 {
     explicit npc_darrowshire_triggerAI(Creature* pCreature) : ScriptedAI(pCreature), _cleanupDone(false), _initialized(false)
     {
-        DefenderFaction = 113;  // Faction Escortee : heal possible mais... n'attaque pas à vue malgré les bons flags :/
+        DefenderFaction = 113;  // Faction Escortee : heal possible mais... n'attaque pas ?vue malgr?les bons flags :/
         Reset();
     }
 
@@ -1351,7 +1351,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
 
     void Reset()
     {
-        // Changement de faction nécessaire pour permettre l'aggro à vue
+        // Changement de faction nécessaire pour permettre l'aggro ?vue
         Map::PlayerList const &pl = m_creature->GetMap()->GetPlayers();
         uint32 myArea = m_creature->GetAreaId();
         if (!pl.isEmpty() && myArea)
@@ -1784,7 +1784,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                     }
                     break;
                 }
-                case 3: // Horgus the Ravager est tué, Davil disparait et Redpath pop
+                case 3: // Horgus the Ravager est tu? Davil disparait et Redpath pop
                 {
                     if (Creature* davil = m_creature->GetMap()->GetCreature(davilGuid))
                     {
@@ -1805,7 +1805,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                     }
                     break;
                 }
-                case 4: // Marduk spawn, Redpath est tué et Redpath corrompu pop
+                case 4: // Marduk spawn, Redpath est tu?et Redpath corrompu pop
                 {
                     Creature* marduk = m_creature->GetMap()->GetCreature(mardukGuid);
                     if (marduk)
