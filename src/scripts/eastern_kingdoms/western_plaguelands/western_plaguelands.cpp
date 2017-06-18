@@ -80,7 +80,7 @@ enum
     SPELL_SCARLET_ILLUSION  = 17961
 };
 
-#define GOSSIP_ITEM_ILLUSION    "我准备好使用血色幻象了,米兰达."
+#define GOSSIP_ITEM_ILLUSION    "我准备好使用血色幻象了米兰达."
 
 bool GossipHello_npc_myranda_the_hag(Player* pPlayer, Creature* pCreature)
 {
