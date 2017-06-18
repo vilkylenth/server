@@ -122,7 +122,7 @@ bool GossipHello_npc_tirion_fordring(Player* pPlayer, Creature* pCreature)
         pPlayer->PrepareQuestMenu(pCreature->GetGUID());
 
     if (pPlayer->GetQuestStatus(5742) == QUEST_STATUS_INCOMPLETE && pPlayer->getStandState() == UNIT_STAND_STATE_SIT)
-        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我准备好听你的故事了，提里奥。", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我准备好听你的故事了，提里奥.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
 
     pPlayer->SEND_GOSSIP_MENU(pPlayer->GetGossipTextId(pCreature), pCreature->GetGUID());
 
@@ -138,11 +138,11 @@ bool GossipSelect_npc_tirion_fordring(Player* pPlayer, Creature* pCreature, uint
             pPlayer->SEND_GOSSIP_MENU(4493, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+2:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "太糟糕了。", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 3);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "太糟糕了.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 3);
             pPlayer->SEND_GOSSIP_MENU(4494, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+3:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我会的，提里奥。", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 4);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我会的，提里奥.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 4);
             pPlayer->SEND_GOSSIP_MENU(4495, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+4:
@@ -411,7 +411,7 @@ struct npc_eris_havenfireAI : public ScriptedAI
             switch (rand() % 15)
             {
                 case 0:
-                    pSummoned->MonsterSay("圣光的力量是真正伟大和仁慈的。", 0, 0);
+                    pSummoned->MonsterSay("圣光的力量是真正伟大和仁慈的.", 0, 0);
                     break;
                 case 1:
                     pSummoned->MonsterSay("我们将再次团聚，我的爱...", 0, 0);
@@ -420,7 +420,7 @@ struct npc_eris_havenfireAI : public ScriptedAI
                     pSummoned->MonsterSay("终于结束了...", 0, 0);
                     break;
                 case 3:
-                    pSummoned->MonsterSay("陌生人，找到堕落的米奈希尔王子，结束他的恐怖统治。", 0, 0);
+                    pSummoned->MonsterSay("陌生人，找到堕落的米奈希尔王子，结束他的恐怖统治.", 0, 0);
                     break;
             }
 
@@ -466,7 +466,7 @@ struct npc_eris_havenfireAI : public ScriptedAI
         if (rand() % 2)
             m_creature->MonsterYell("我再次失败了...", 0);
         else
-            m_creature->MonsterSay("我现在回到我来的地方，却发现自己又在这里重温同样的史诗悲剧。", 0);
+            m_creature->MonsterSay("我现在回到我来的地方，却发现自己又在这里重温同样的史诗悲剧.", 0);
 
         if (GameObject* pLight = m_creature->FindNearestGameObject(GO_LIGHT, 100.0f))
             pLight->AddObjectToRemoveList();
@@ -538,7 +538,7 @@ struct npc_eris_havenfireAI : public ScriptedAI
                                 Cre->MonsterYell("灾难降临到我们头上，跑，为了活命，跑....", 0);
                                 break;
                             case 1:
-                                Cre->MonsterYell("请帮助我们！王子疯了！", 0);
+                                Cre->MonsterYell("请帮助我们！王子疯了！.", 0);
                                 break;
                             case 2:
                                 Cre->MonsterYell("在壁炉谷寻求避难所！这是我们唯一的希望！", 0);
@@ -863,13 +863,13 @@ struct npc_eris_havenfire_peasantAI : public ScriptedAI
             switch (rand() % 30)
             {
                 case 0:
-                    m_creature->MonsterSay("如果我能活下去，毁灭阿尔萨斯将成为我生命中唯一的坚持…", 0, 0);
+                    m_creature->MonsterSay("如果我能活下去，毁灭阿尔萨斯将成为我生命中唯一的坚持….", 0, 0);
                     break;
                 case 1:
-                    m_creature->MonsterSay("我不会做的…走…没有我也一样可以继续…", 0, 0);
+                    m_creature->MonsterSay("我不会做的…走…没有我也一样可以继续….", 0, 0);
                     break;
                 case 2:
-                    m_creature->MonsterSay("死亡带走我！我不能继续下去！我什么也没留下…", 0, 0);
+                    m_creature->MonsterSay("死亡带走我！我不能继续下去！我什么也没留下….", 0, 0);
                     break;
             }
             m_uiSayPeasantTimer = urand(20000, 50000);
@@ -1512,7 +1512,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
             case NPC_HORGUS_THE_RAVAGER:
             {
                 if (Creature* Crea = m_creature->FindNearestCreature(NPC_DARROWSHIRE_DEFENDER, 100.0f, true))
-                    Crea->MonsterYell("霍古斯被杀！振作起来，捍卫达隆郡！", 0);
+                    Crea->MonsterYell("霍古斯被杀！振作起来，捍卫达隆郡！.", 0);
                 PhaseStep = 3;
                 PhaseTimer = 8000;
                 break;
@@ -1523,7 +1523,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                 {
                     // echec de la quete
                     if (Creature* Crea = m_creature->FindNearestCreature(NPC_DARROWSHIRE_DEFENDER, 100.0f, true))
-                        Crea->MonsterYell("莱法尔被击败，达隆郡已经沦陷。", 0);
+                        Crea->MonsterYell("莱法尔被击败，达隆郡已经沦陷。.", 0);
                     DespawnAll();
                 }
                 break;
@@ -1534,7 +1534,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                 {
                     // echec de la quete
                     if (Creature* Crea = m_creature->FindNearestCreature(NPC_DARROWSHIRE_DEFENDER, 100.0f, true))
-                        Crea->MonsterYell("雷德帕斯队长被杀！", 0);
+                        Crea->MonsterYell("雷德帕斯队长被杀！.", 0);
                     DespawnAll();
                 }
                 break;
@@ -1542,7 +1542,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
             case NPC_REDPATH_THE_CORRUPTED:
             {
                 if (Creature* Crea = m_creature->FindNearestCreature(NPC_DARROWSHIRE_DEFENDER, 100.0f, true))
-                    Crea->MonsterYell("天灾被打败了！达隆郡保住了！", 0);
+                    Crea->MonsterYell("天灾被打败了！达隆郡保住了！.", 0);
                 m_creature->SummonCreature(NPC_JOSEPH_REDPATH, DarrowshireEvent[7].X, DarrowshireEvent[7].Y, DarrowshireEvent[7].Z, 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 600000);
                 m_creature->SummonCreature(NPC_DAVIL_CROKFORD, 1465.43f, -3678.48f, 78.0816f, 0.0402176f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000);
                 DespawnAll();
@@ -1670,13 +1670,13 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                                     switch (rand() % 3)
                                     {
                                         case 0:
-                                            Militia->MonsterSay("兄弟姐妹们，战斗到最后一口气！", 0, 0);
+                                            Militia->MonsterSay("兄弟姐妹们，战斗到最后一口气！.", 0, 0);
                                             break;
                                         case 1:
-                                            Militia->MonsterSay("滚回巫妖王的脚下，肮脏的生物！", 0, 0);
+                                            Militia->MonsterSay("滚回巫妖王的脚下，肮脏的生物！.", 0, 0);
                                             break;
                                         case 2:
-                                            Militia->MonsterSay("我们的队长会救我们的！", 0, 0);
+                                            Militia->MonsterSay("我们的队长会救我们的！.", 0, 0);
                                             break;
                                     }
                                     yelled = true;
@@ -1738,7 +1738,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                 {
                     if (Creature* Cre = m_creature->SummonCreature(NPC_DARROWSHIRE_DEFENDER, DarrowshireEvent[7].X, DarrowshireEvent[7].Y, DarrowshireEvent[7].Z, 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000))
                     {
-                        Cre->MonsterYell("达隆郡的勇士们，拿起武器！ 天灾逼近！", 0);
+                        Cre->MonsterYell("达隆郡的勇士们，拿起武器！ 天灾逼近！.", 0);
                         Cre->SetWalk(false);
                         Cre->SetHomePosition(DarrowshireEvent[4].X, DarrowshireEvent[4].Y, DarrowshireEvent[4].Z, DarrowshireEvent[4].O);
                         Cre->GetMotionMaster()->MovePoint(0, DarrowshireEvent[4].X, DarrowshireEvent[4].Y, DarrowshireEvent[4].Z, MOVE_PATHFINDING, 3.0f);
@@ -1751,7 +1751,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                 {
                     if (Creature* davilLightfire = m_creature->SummonCreature(NPC_DAVIL_LIGHTFIRE, DarrowshireEvent[7].X, DarrowshireEvent[7].Y, DarrowshireEvent[7].Z, 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000))
                     {
-                        davilLightfire->MonsterYell("不要失去希望，达隆郡！ 我们不会倒下！", 0);
+                        davilLightfire->MonsterYell("不要失去希望，达隆郡！ 我们不会倒下！.", 0);
                         davilGuid = davilLightfire->GetObjectGuid();
                         PhaseTimer = 60000;
                         MobTimer[2] = 4000;
@@ -1768,7 +1768,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                         break;
                     if (Creature* horgus = m_creature->GetMap()->GetCreature(horgusGuid))
                     {
-                        davil->MonsterYell("霍格斯，你的噩梦结束了！ 现在！", 0);
+                        davil->MonsterYell("霍格斯，你的噩梦结束了！ 现在！.", 0);
                         PhaseTimer = 0;
                         break;
                     }
@@ -1779,7 +1779,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                     {
                         horgus->AI()->AttackStart(davil);
                         horgusGuid = horgus->GetObjectGuid();
-                        horgus->MonsterYell("戴维尔，圣光在你身上闪耀。 我会享受扼杀它的！", 0);
+                        horgus->MonsterYell("戴维尔，圣光在你身上闪耀。 我会享受扼杀它的！.", 0);
                         PhaseTimer = 3000;
                     }
                     break;
@@ -1789,14 +1789,14 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                     if (Creature* davil = m_creature->GetMap()->GetCreature(davilGuid))
                     {
                         davil->ForcedDespawn(2000);
-                        davil->MonsterYell("啊! 我的伤太严重。 达隆郡的防御者，战斗要靠你们自己了！", 0);
+                        davil->MonsterYell("啊! 我的伤太严重。 达隆郡的防御者，战斗要靠你们自己了！.", 0);
                         PhaseTimer = 10000;
                         break;
                     }
 
                     if (Creature* redpath = m_creature->SummonCreature(NPC_CAPTAIN_REDPATH, DarrowshireEvent[7].X, DarrowshireEvent[7].Y, DarrowshireEvent[7].Z, 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000))
                     {
-                        redpath->MonsterYell("达隆郡的防御者们！ 团结一致！ 我们必将胜利！", 0);
+                        redpath->MonsterYell("达隆郡的防御者们！ 团结一致！ 我们必将胜利！.", 0);
                         redpathGuid = redpath->GetObjectGuid();
                         PhaseTimer = urand(300000, 350000);
                         PhaseStep = 4;
@@ -1817,7 +1817,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                             marduk->DealDamage(redpath, redpath->GetHealth(), NULL, DIRECT_DAMAGE, SPELL_SCHOOL_MASK_NORMAL, NULL, false);
                             if (Creature* redpathCorrupted = m_creature->SummonCreature(NPC_REDPATH_THE_CORRUPTED, redpath->GetPositionX(), redpath->GetPositionY(), redpath->GetPositionZ(), 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000))
                             {
-                                redpathCorrupted->MonsterYell("达隆郡被打败！ 不久之后，所有的洛丹伦都会被征服！", 0);
+                                redpathCorrupted->MonsterYell("达隆郡被打败！ 不久之后，所有的洛丹伦都会被征服！.", 0);
                                 redpathCorruptedGuid = redpathCorrupted->GetObjectGuid();
                             }
                         }
@@ -1830,7 +1830,7 @@ struct npc_darrowshire_triggerAI : public ScriptedAI
                         m_creature->GetRandomPoint(redpath->GetPositionX(), redpath->GetPositionY(), redpath->GetPositionZ(), 10.0f, X, Y, Z);
                         if (Creature* marduk = m_creature->SummonCreature(NPC_MARDUK_THE_BLACK, X, Y, Z, 0.0f, TEMPSUMMON_TIMED_OR_DEAD_DESPAWN, 120000))
                         {
-                            marduk->MonsterYell("雷德帕斯！ 你的生命结束了，此时此刻！", 0);
+                            marduk->MonsterYell("雷德帕斯！ 你的生命结束了，此时此刻！.", 0);
                             mardukGuid = marduk->GetObjectGuid();
                             PhaseTimer = 5000;
                         }
@@ -1962,7 +1962,7 @@ struct npc_joseph_redpathAI : public ScriptedAI
                 {
                     if (Creature* pamela = m_creature->FindNearestCreature(NPC_PAMELA_REDPATH, 150.0f, true))
                     {
-                        pamela->MonsterSay("我非常想念你，爸爸！", 0, 0);
+                        pamela->MonsterSay("我非常想念你，爸爸！.", 0, 0);
                         pamela->HandleEmote(EMOTE_ONESHOT_TALK);
                     }
                     ++EventStep;
@@ -1971,7 +1971,7 @@ struct npc_joseph_redpathAI : public ScriptedAI
                 }
                 case 6:
                 {
-                    m_creature->MonsterSay("我也想念你，亲爱的小宝贝。我终于到家了…", 0, 0);
+                    m_creature->MonsterSay("我也想念你，亲爱的小宝贝。我终于到家了….", 0, 0);
                     m_creature->HandleEmote(EMOTE_ONESHOT_TALK);
                     m_creature->SetFlag(UNIT_NPC_FLAGS, UNIT_NPC_FLAG_GOSSIP);
                     m_creature->ForcedDespawn(120000);

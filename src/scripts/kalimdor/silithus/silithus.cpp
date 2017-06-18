@@ -1328,16 +1328,16 @@ bool GossipHello_npc_AQwar_effort(Player* pPlayer, Creature* pCreature)
 	switch (pCreature->GetEntry())
 	{
 	case NPC_FIELD_MARSHAL_SNOWFALL:    // Shared + Alliance
-		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Shared War Effort", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "共用的战争资源.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
 		// no break
 	case NPC_COMMANDER_STRONGHAMMER:    // Alliance only
-		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Alliance War Effort", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "联盟战争资源.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
 		break;
 	case NPC_WARLORD_GORCHUK:           // Shared + Horde
-		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Shared War Effort", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
+		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "共用的战争资源.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF);
 		// no break
 	case NPC_GENERAL_ZOG:               // Horde only
-		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Horde War Effort", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
+		pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "部落战争资源.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
 		break;
 	default:
 		break;

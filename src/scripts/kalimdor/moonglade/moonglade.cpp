@@ -41,8 +41,8 @@ enum
     TAXI_PATH_ID_HORDE          = 316
 };
 
-#define GOSSIP_ITEM_THUNDER     "I'd like to fly to Thunder Bluff."
-#define GOSSIP_ITEM_AQ_END      "Do you know where I can find Half Pendant of Aquatic Endurance?"
+#define GOSSIP_ITEM_THUNDER     "我想飞到雷霆崖去。."
+#define GOSSIP_ITEM_AQ_END      "你知道哪里可以找到水兽耐力坠饰?."
 
 bool GossipHello_npc_bunthen_plainswind(Player* pPlayer, Creature* pCreature)
 {
@@ -92,10 +92,10 @@ bool GossipSelect_npc_bunthen_plainswind(Player* pPlayer, Creature* pCreature, u
  ## npc_great_bear_spirit
  ######*/
 
-#define GOSSIP_BEAR1 "What do you represent, spirit?"
-#define GOSSIP_BEAR2 "I seek to understand the importance of strength of the body."
-#define GOSSIP_BEAR3 "I seek to understand the importance of strength of the heart."
-#define GOSSIP_BEAR4 "I have heard your words, Great Bear Spirit, and I understand. I now seek your blessings to fully learn the way of the Claw."
+#define GOSSIP_BEAR1 "你代表什么，精神？."
+#define GOSSIP_BEAR2 "我力求理解身体力量的重要性。."
+#define GOSSIP_BEAR3 "我想了解心的力量的重要性，."
+#define GOSSIP_BEAR4 "我听到了你的话，大熊的精神，我明白了。我现在寻求你的祝福，充分学习利爪的方式。."
 
 bool GossipHello_npc_great_bear_spirit(Player* pPlayer, Creature* pCreature)
 {
@@ -142,8 +142,8 @@ bool GossipSelect_npc_great_bear_spirit(Player* pPlayer, Creature* pCreature, ui
  ## npc_silva_filnaveth
  ######*/
 
-#define GOSSIP_ITEM_RUTHERAN    "I'd like to fly to Rut'theran Village."
-#define GOSSIP_ITEM_AQ_AGI      "Do you know where I can find Half Pendant of Aquatic Agility?"
+#define GOSSIP_ITEM_RUTHERAN    "我想飞到鲁瑟兰村."
+#define GOSSIP_ITEM_AQ_AGI      "你知道我在哪里可以找到水兽敏捷坠饰?"
 
 bool GossipHello_npc_silva_filnaveth(Player* pPlayer, Creature* pCreature)
 {

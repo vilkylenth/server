@@ -51,23 +51,23 @@ bool GossipSelect_npc_lorax(Player* pPlayer, Creature* pCreature, uint32 uiSende
     switch (uiAction)
     {
         case GOSSIP_ACTION_INFO_DEF:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "What do you do here?", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "你在这里做什么？.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
             pPlayer->SEND_GOSSIP_MENU(3759, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+1:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "I can help you", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我可以帮助你.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 2);
             pPlayer->SEND_GOSSIP_MENU(3760, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+2:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "What deal?", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 3);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "什么交易？.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 3);
             pPlayer->SEND_GOSSIP_MENU(3761, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+3:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Then what happened?", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 4);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "然后发生了什么事？.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 4);
             pPlayer->SEND_GOSSIP_MENU(3762, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+4:
-            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "He is not safe, i'll make sure of that.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 5);
+            pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "他不安全，我来确认一下.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 5);
             pPlayer->SEND_GOSSIP_MENU(3763, pCreature->GetGUID());
             break;
         case GOSSIP_ACTION_INFO_DEF+5:
@@ -114,7 +114,7 @@ bool GossipHello_npc_witch_doctor_mauari(Player* pPlayer, Creature* pCreature)
 
     if (pPlayer->GetQuestRewardStatus(975))
     {
-        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "I'd like you to make me a new Cache of Mau'ari please.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+        pPlayer->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "我想要一个新的玛艾里的容器.", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
         pPlayer->SEND_GOSSIP_MENU(3377, pCreature->GetGUID());
     }
     else
@@ -151,7 +151,7 @@ enum
     QUEST_STAVE_OF_THE_ANCIENTS     = 7636
 };
 
-#define GOSSIP_ITEM                 "Show me your real face, demon."
+#define GOSSIP_ITEM                 "现出你的真实面目，恶魔."
 
 /*######
 ## npc_artorius_the_amiable
@@ -467,7 +467,7 @@ struct npc_ranshallaAI : public npc_escortAI
     }
 
     uint32 timer;
-    bool wpInvoqueAtteint; //pour d�marrer le timer de texte.
+    bool wpInvoqueAtteint; //pour dmarrer le timer de texte.
     bool pretressesInvoque; //pour ne pas en invoquer une infinit� ^^'
     bool pretressesRepartent;
 
@@ -508,15 +508,15 @@ struct npc_ranshallaAI : public npc_escortAI
     {
 
 // GameObject* WorldObject::SummonGameObject(uint32 entry, float x, float y, float z, float ang, float rotation0, float rotation1, float rotation2, float rotation3, uint32 respawnTime)
-        m_creature->SummonGameObject(177415, 5514.490234f, -4917.569824f, 846, 0, -0.240f, 0, 0, 0, 120);//1,-0.239//1.1,-0.240 trop.//lumi�re centrale
+        m_creature->SummonGameObject(177415, 5514.490234f, -4917.569824f, 846, 0, -0.240f, 0, 0, 0, 120);//1,-0.239//1.1,-0.240 trop.//lumire centrale
         m_creature->SummonGameObject(177415, 5517.699219f, -4923.396484f, 845, 0, 0, 0, 0, 0, 120);//devant.
-        m_creature->SummonGameObject(177415, 5535.837891f, -4914.595215f, 841, 0, -0.1f, 0.3f, 0, 0, 120);//devant � cot� rocher
+        m_creature->SummonGameObject(177415, 5535.837891f, -4914.595215f, 841, 0, -0.1f, 0.3f, 0, 0, 120);//devant  cot rocher
         m_creature->SummonGameObject(177415, 5507.489258f, -4921.728516f, 847, 0, 0, 0, 0, 0, 120);//gauche
-        m_creature->SummonGameObject(177415, 5506.629883f, -4908.958496f, 849, 0, 0, 0, 0, 0, 120);//derri�re
+        m_creature->SummonGameObject(177415, 5506.629883f, -4908.958496f, 849, 0, 0, 0, 0, 0, 120);//derrire
         m_creature->SummonGameObject(177415, 5500.777344f, -4920.617676f, 849, 0, -0.1f, -0.2f, 0, 0, 120);//poutres gauche
         m_creature->SummonGameObject(177415, 5516.331055f, -4902.605469f, 847, 0, -0.1f, -0.3f, 0, 0, 120);//poutres droite
         //m_creature->SummonGameObject(177415, 5515.588379, -4921.833496, 848, 0, -0.237, 0, 0, 0, 20000);// 00300 horizontal NS//00-0.700 horiz SN
-        //00070 vertical tr�s fin//00.7000 horizOE//0-0.235000 casi vertical OE, -0.239 disparait, -0.237 ~vertical
+        //00070 vertical trs fin//00.7000 horizOE//0-0.235000 casi vertical OE, -0.239 disparait, -0.237 ~vertical
         //
 
     }
@@ -524,7 +524,7 @@ struct npc_ranshallaAI : public npc_escortAI
     void PopGem()
     {
         m_creature->SummonGameObject(177414, 5514.490234f, -4917.569824f, 852, 0, 0, 0, 0, 0, 90); //gemme
-        m_creature->SummonGameObject(177486, 5514.490234f, -4917.569824f, 845, 0, 0, 0, 0, 0, 90); //lumi�re bleue
+        m_creature->SummonGameObject(177486, 5514.490234f, -4917.569824f, 845, 0, 0, 0, 0, 0, 90); //lumire bleue
         Creature* pVoice = m_creature->SummonCreature(12152, 5514.890137f, -4918.169922f, 845.538025f, 5.3f, TEMPSUMMON_TIMED_DESPAWN, 90000); //voix d'elune
         guidVoice = pVoice->GetGUID();
     }
@@ -533,7 +533,7 @@ struct npc_ranshallaAI : public npc_escortAI
     {
         bool invoked = false;
         //Creature* SummonCreature(uint32 id, float x, float y, float z, float ang,TempSummonType spwtype = TEMPSUMMON_DEAD_DESPAWN,uint32 despwtime = 25000, bool asActiveObject = false);
-        Creature* pPriestess1 = m_creature->SummonCreature(12116, 5496.097168f, -4919.254395f, 850.485291f, 6.01f, TEMPSUMMON_TIMED_DESPAWN, 240000); //d�pop manuel � 2min normalement
+        Creature* pPriestess1 = m_creature->SummonCreature(12116, 5496.097168f, -4919.254395f, 850.485291f, 6.01f, TEMPSUMMON_TIMED_DESPAWN, 240000); //dpop manuel  2min normalement
         Creature* pPriestess2 = m_creature->SummonCreature(12116, 5514.291992f, -4898.066406f, 847.032471f, 5.3f, TEMPSUMMON_TIMED_DESPAWN, 240000);
         //pPriestess1 = m_creature->SummonCreature(12116, cop1[0].xyz[0],cop1[0].xyz[1], cop1[0].xyz[2], 6.01, TEMPSUMMON_TIMED_DESPAWN, 30000);
 
@@ -552,13 +552,13 @@ struct npc_ranshallaAI : public npc_escortAI
                 //m_creature->MonsterSay("The priestesses have been invoked.");//test
             }
             else
-                m_creature->MonsterSay("Navr�, les pr�tresses n'en font qu'a leur t�te...");
+                m_creature->MonsterSay("Navr�, 祭司也使有他们的头......");
         }
         else
         {
             wpInvoqueAtteint = 0;
             pretressesInvoque = 0;
-            m_creature->MonsterSay("Navr�, les pretresses ne veulent pas pop...");
+            m_creature->MonsterSay("Navr�, 女祭司不想跳出...");
         }
 
         return invoked;
@@ -622,7 +622,7 @@ struct npc_ranshallaAI : public npc_escortAI
             case 0:
                 m_creature->SetFlag(UNIT_FIELD_FLAGS, UNIT_FLAG_PASSIVE);
                 if (pretressesRepartent != 0 ||  wpInvoqueAtteint != 0 || guidPriestess1 != 0 || guidPriestess2 != 0 ||  guidMoonkin != 0 ||  guidVoice != 0 || pretressesInvoque != 0)
-                    m_creature->MonsterSay("WTF values have not been reset properly !");
+                    m_creature->MonsterSay("WTF值未正确重置！.");
                 DoScriptText(RANSHALLA_BEGIN, m_creature, pPlayer);
                 break;
             case 2:
@@ -940,24 +940,24 @@ struct npc_umi_yetiAI : public ScriptedAI
                     switch (phase)
                     {
                         case 0:
-                            m_creature->MonsterTextEmote("Umi's Mechanical Yeti marches around, roaring and making a ruckus.", 0);
-                            m_creature->MonsterSay("RAAAAAAAR!", 0);
+                            m_creature->MonsterTextEmote("乌米的机械雪人游行周围，咆哮，使骚动。.", 0);
+                            m_creature->MonsterSay("啊啊啊啊.", 0);
                             pCreature->CastSpell(pCreature, SPELL_AUTO_FEAR, true);
                             break;
                         case 1:
                             switch (m_targetType)
                             {
                                 case TARGET_QUIXXIL:
-                                    pCreature->MonsterSay("Oh!!! Get that thing away from me!", 0);
-                                    pCreature->MonsterTextEmote("Quixxil runs quickly away from Umi's Mechanical yeti.", 0);
+                                    pCreature->MonsterSay("哦！！！ 让我离开我的东西！.", 0);
+                                    pCreature->MonsterTextEmote("奎克希尔从乌米的机械雪人很快地走了运行.", 0);
                                     break;
                                 case TARGET_LEGACKI:
-                                    pCreature->MonsterTextEmote("Legacki jumps in fright!", 0);
-                                    pCreature->MonsterSay("Ahhhhh!!!", 0);
+                                    pCreature->MonsterTextEmote("莱加奇惊天地跳起来！.", 0);
+                                    pCreature->MonsterSay("啊哈哈哈.", 0);
                                     break;
                                 case TARGET_SPRINKLE:
-                                    pCreature->MonsterTextEmote("Sprinkle jumps in fright!", 0);
-                                    pCreature->MonsterSay("Ahhhhh!!! What is that thing?!", 0);
+                                    pCreature->MonsterTextEmote("吓得直跳！.", 0);
+                                    pCreature->MonsterSay("啊哈哈哈！！！ 那是什么东西？！.", 0);
                                     break;
                             }
                             break;
@@ -965,13 +965,13 @@ struct npc_umi_yetiAI : public ScriptedAI
                             switch (m_targetType)
                             {
                                 case TARGET_QUIXXIL:
-                                    pCreature->MonsterSay("Why do you chase me, Mechanical yeti?! WHY?!", 0);
+                                    pCreature->MonsterSay("你为什么追我，机械雪人吗？！为什么？！.", 0);
                                     break;
                                 case TARGET_LEGACKI:
-                                    pCreature->MonsterSay("You big meanie! Who put you up to this?", 0);
+                                    pCreature->MonsterSay("你这个大坏蛋！是谁让你这么做的？.", 0);
                                     break;
                                 case TARGET_SPRINKLE:
-                                    pCreature->MonsterSay("Umi sent you, didn't she? She told me to expect a surprise, but I never thought that this is what she meant! ", 0);
+                                    pCreature->MonsterSay("乌米送你的，不是吗？她告诉我期待一个惊喜，但我从来没有想过这是她的意思！.", 0);
                                     break;
                             }
                             break;
@@ -979,10 +979,10 @@ struct npc_umi_yetiAI : public ScriptedAI
                             switch (m_targetType)
                             {
                                 case TARGET_QUIXXIL:
-                                    m_creature->MonsterTextEmote("the mechanical yeti winds down.", 0);
+                                    m_creature->MonsterTextEmote("机械雪人吹下来。.", 0);
                                     break;
                                 case TARGET_LEGACKI:
-                                    pCreature->MonsterSay("It was Umi, wasn't it?! She's always playing jokes on me, and now she's got you in on it too!", 0);
+                                    pCreature->MonsterSay("是乌米，不是吗？她总是跟我开玩笑，现在她也骗你了！.", 0);
                                     break;
                             }
                             break;
@@ -990,11 +990,11 @@ struct npc_umi_yetiAI : public ScriptedAI
                             switch (m_targetType)
                             {
                                 case TARGET_QUIXXIL:
-                                    pCreature->MonsterTextEmote("Quixxil looks relieved.", 0);
-                                    pCreature->MonsterSay("I'm jumpy as it is... and people insist on scaring me... Next time, though, I'll be ready!", 0);
+                                    pCreature->MonsterTextEmote("奎克希尔看起来松了一口气.", 0);
+                                    pCreature->MonsterSay("我像他一样跳动…人们坚持吓唬我…下次，我会准备好的！.", 0);
                                     break;
                                 case TARGET_LEGACKI:
-                                    pCreature->MonsterTextEmote("Legacki sighs.", 0);
+                                    pCreature->MonsterTextEmote("莱加奇叹息.", 0);
                                     break;
                             }
                         case 5:
