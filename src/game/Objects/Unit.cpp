@@ -637,7 +637,7 @@ uint32 Unit::DealDamage(Unit *pVictim, uint32 damage, CleanDamage const* cleanDa
         if (pVictim != this)
             RemoveSpellsCausingAura(SPELL_AURA_MOD_INVISIBILITY);
 
-        if (pVictim->GetTypeId() == TYPEID_PLAYER && !pVictim->IsStandState() && !pVictim->hasUnitState(UNIT_STAT_STUNNED | UNIT_STAT_PENDING_STUNNED))
+        if (pVictim->GetTypeId() == TYPEID_PLAYER && !pVictim->IsMounted() && !pVictim->IsStandState())
             pVictim->SetStandState(UNIT_STAND_STATE_STAND);
     }
 
@@ -2055,7 +2055,7 @@ static ResistanceValues resistValues[] =
     {1, 13, 41, 35, 10, 40}, // 160
     {1, 16, 45, 30, 8, 43}, // 170
     {1, 18, 48, 26, 7, 45}, // 180
-    {2, 20, 48, 24, 6, 43}, // 190
+    {2, 20, 48, 24, 6, 48}, // 190
     {4, 23, 48, 21, 4, 50}, // 200
     {5, 25, 47, 19, 3, 53}, // 210
     {7, 28, 45, 17, 2, 55}, // 220
@@ -6167,6 +6167,10 @@ int32 Unit::SpellBonusWithCoeffs(SpellEntry const *spellProto, int32 total, int3
         // Lumiere sacree
         //else if (spellProto->Id == 19968)
             //bUsePenalty = false;
+
+        // Dragonbreath Chili
+        if (spellProto->Id == 15851)
+            bUsePenalty = false;
 
         if (bUsePenalty)
             total += int32(benefit * coeff * LvlPenalty);
